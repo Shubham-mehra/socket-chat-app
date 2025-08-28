@@ -1,11 +1,12 @@
 const express = require("express");
+require("dotenv").config();
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 
-const PORT = "8001";
-const CLIENT_PORT = "3001";
+const PORT = process.env.PORT || 8001;
+const CLIENT_PORT = process.env.CLIENT_PORT || 3001;
 const app = express();
 app.use(cors());
 app.use(express.json());
